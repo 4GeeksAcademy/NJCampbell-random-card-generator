@@ -1,12 +1,74 @@
 body {
-  background: #3cb940;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  box-sizing: border-box;
 }
+
+#navContainer {
+  border-radius: 2%;
+}
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
-  display: inline-block;
-  margin: auto;
-  height: 500px;
-  width: 200px;
+  text-align: center;
+  display: block;
+  margin: 10% auto;
+  height: 480px;
+  width: 280px;
+  font-size: 80px;
   padding: 20px;
+  padding-top: 180px;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 80px;
+  }
+  &::after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 80px;
+    transform: rotate(180deg);
+  }
+  &.spades:before,
+  &.spades:after {
+    content: "\2660";
+  }
+  &.hearts:before,
+  &.hearts:after {
+    content: "\2665";
+    color: red;
+  }
+  &.clubs:before,
+  &.clubs:after {
+    content: "\2663";
+  }
+  &.diamonds:before,
+  &.diamonds:after {
+    content: "\2666";
+    color: red;
+  }
+}
+
+.number {
+  padding-bottom: 30px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 500px;
 }

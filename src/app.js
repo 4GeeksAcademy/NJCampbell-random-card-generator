@@ -1,7 +1,5 @@
-/* eslint-disable */
-
 let getSuit = () => {
-  let suits = ["♠", "♣", "♥", "♦"];
+  let suits = ["spades", "clubs", "hearts", "diamonds"];
   let suitsIndex = Math.floor(Math.random() * suits.length);
   return suits[suitsIndex];
 };
@@ -28,11 +26,9 @@ let getValue = () => {
   return values[valuesIndex];
 };
 
-// console.log(getSuit);
-// console.log(getValue);
-
 window.onload = () => {
-  document.querySelector(".card").classList.add(getSuit());
-  document.querySelector(".card").classList.add(getValue());
+  document.querySelector(".btn").addEventListener("click", () => {
+    document.querySelector(".card").innerHTML = getValue();
+    document.querySelector(".card").classList.add(getSuit());
+  });
 };
-console.log("what is happening?");
