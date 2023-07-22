@@ -27,8 +27,6 @@ let getValue = () => {
 };
 
 window.onload = () => {
-  document.querySelector(".btn").addEventListener("click", () => {
-    document.querySelector(".card").innerHTML = getValue();
-    document.querySelector(".card").classList.add(getSuit());
-  });
+  document.querySelector(".card").innerHTML = getValue();
+  document.querySelector(".card").classList.add(getSuit());
 };
